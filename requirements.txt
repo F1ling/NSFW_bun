@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+nudenet
+python-multipart
+tensorflow-cpu
