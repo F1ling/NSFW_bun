@@ -19,8 +19,8 @@ async def moder_pic(upload_f: UploadFile):
         "class": t["class"] in scan_pic,
         "score": t["score"]>0.7} for t in scan_pic]
         if bun_NSFW in check_NSFW:
-            return {"BUN": "NSFW"}
-        return {"ok": "Safe"}
+            return {"status": "REJECTED", "reason": "NSFW content"}
+        return {"status": "OK"}
     except Exception as e:
         raise HTTPException(500, detail=f"Processing error: {str(e)}")
  
